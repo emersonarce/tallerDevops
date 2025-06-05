@@ -7,7 +7,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProductManagerTest {
-    /*@Test
+    @Test
     void testAddAndGetProduct() {
         ProductManager manager = new ProductManager();
         Product p = new Product("1", "Laptop", "Electronics", 1200.0);
@@ -65,6 +65,27 @@ class ProductManagerTest {
         assertTrue(allProducts.contains(p1));
         assertTrue(allProducts.contains(p2));
         assertTrue(allProducts.contains(p3));
-    }*/
+    }
+    @Test
+    void checkItemsWithinPriceRange() {
+    ProductManager inventory = new ProductManager();
 
+        Product item1 = new Product("A1", "Tablet", "Technology", 1100.0);
+        Product item2 = new Product("B2", "Sneakers", "Apparel", 35.0);
+        Product item3 = new Product("C3", "Notebook", "Stationery", 25.0);
+        Product item4 = new Product("D4", "Headphones", "Technology", 40.0);
+
+        inventory.addProduct(item1);
+        inventory.addProduct(item2);
+        inventory.addProduct(item3);
+        inventory.addProduct(item4);
+
+        List<Product> filteredItems = inventory.getProductsByPriceRange(25.0, 40.0);
+
+        assertEquals(3, filteredItems.size());
+        assertTrue(filteredItems.contains(item2));
+        assertTrue(filteredItems.contains(item3));
+        assertTrue(filteredItems.contains(item4));
+}
+    
 }
