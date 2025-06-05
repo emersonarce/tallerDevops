@@ -7,7 +7,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProductManagerTest {
-    /*@Test
+    @Test
     void testAddAndGetProduct() {
         ProductManager manager = new ProductManager();
         Product p = new Product("1", "Laptop", "Electronics", 1200.0);
@@ -86,7 +86,6 @@ class ProductManagerTest {
         assertTrue(filteredItems.contains(item2));
         assertTrue(filteredItems.contains(item3));
         assertTrue(filteredItems.contains(item4));
-}*/
-
+}
     
 }
